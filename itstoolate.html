@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>IT'S TOO LATE</h1> 
+
+<p>You realize that it's too late to go to the library.</p>
+<p>You realize that you've spent the whole day at home doing nothing. And you don't know exactly how to feel about it:</p>
+<p>On the one hand, you're happy that you finally took a day off. On the other hand, did you have a day off?</p>
+<p>You had lousy breakfast, read a book, but now can't even remember what you read, took a walk after which, truth to be told, you felt even more tired than before, supposedly watched a movie, but honestly didn't enjoy a single second of it. All you can remember doing is thinking about how anxious and desperate you are;</p>
+<p>how you are throwing a towel on this journey to New York and that the last 5 months would have been for nothing;</p>
+<p>the things your friends and family will think and say because you didn't have the guts to push through it, to put your feelings aside for a moment and finish what you came here to do.</p>
+<p>You are disappointed with yourself that instead of going to the library and working on your projects, which are the rason why you came to New York, which are the stepping stones to your success, which should have your undivided attention, you chose to stay home and besides the fact that this was the most inopportune time to do so, you didn't even have fun, all of the things that you thought will bring you joy actually increased your anxiety and the pressure of time, of the time that you're running out of. </p>
+<p>You're frustrated with yourself, almost even mad at yourself for not doing the right thing;</p>
+<p>You're left thinking that because of today your projects will not be good enough, thinking why are you even here, you are not worthy of being in New York, you are taking someone else's spot in the program who would have a better grasp on their lives.</p>
+<p>You've ostensibly taken a day off but frankly the whole day you've spent ruminating on whether your choices on how to spend your time are efficient enough, productive enough and whether or not you are succeeding in extracting as as much value as possible from your time.</p>
+<p>Today, you clearly could have done better!<a href="thechoice2.html"> You're disappointed in yourself.</a></p>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

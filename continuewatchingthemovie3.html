@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>CONTINUE WATCHING THE MOVIE</h1>
+
+<p>The movie ends and you don't know exactly how to feel about it:</p>
+<p>On the one hand you're happy that you finally did something for yourself, something that brings you joy. On the other hand, did it bring you joy?</p>
+<p>Every half hour or so you caught yourself wanting to turn off the tv because you didn't really enjoy the film and instead thought about your projects, how stressed you are about how they will turn out and all the details that you want to and still need to work on.</p>
+<p>Now you're totally overcome by the feeling of frustration because instead of resting and going to bed early so that you would feel refreshed and ready to have a productive next day working on your projects, you chose to watch a 2-hour long movie.</p>
+<p>And as much as you try to tell yourself that you had a nice time, that you finally did something for yourself to take the mind off the work and how essential it was for your well-being, you cannot let go of the thought that tomorrow you will look back on your choices and feel irritated with yourself, because you don't feel rested, you don't seem to have gotten the worry-free enjoyment which was the very reason why you chose to watch a movie in the first place.</p>
+<p>You feel disappointed in yourself that you didn't prioritize your work, you're ashamed of yourself.</p>
+<p>In an effort to redeem yourself, you try to make a provisional plan for tomorrow, but because now you feel even more tired than when you initially got home and now also irritated that you even chose to watch the movie in the first place, so you're not capable of thinking straight and instead of writing a fully fleshed-out plan for the next day, you make a short list of bullet points of what you need to do tomorrow, but even looking at the list is making you more and more irritated about the loss of time.</p>
+<p>You end up <a href="gotobedaftermovie.html">going to bed</a> being mad at yourself.</p>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

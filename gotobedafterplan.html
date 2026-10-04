@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>GO TO BED</h1> 
+
+<p>The next morning you wake up tired.
+<p>And immediately think of the loss of time of yesterday's evening.</p>
+<p>You realize that yesterday evening you, again, did nothing either for yourself or for your projects, because the right choice for that would have been anything but what you did, for any work needs a distance from which to return with new insights and a fresh perspective.</p>
+<p>As you think of what you could have done yesterday to prioritize your well-being, you think of what you did instead—prioritized your studies—and realize that it didn't help at all, you didn't reach any new breakthrough with your projects.</p>     
+<p>A fresh wave of frustration overtakes you because you know all that, but you find yourself repeatedly ignoring the truth.</p>
+<p>But how can you take the time to listen to yourself when you have three projects to finish in less than 2 weeks as of this morning?</p>
+<p>The pressure of time, you cannot lose any more of the invaluable hours of the day not working, because you have chosen this, you have come to New York for this, you have come here to succeed.</p>
+<p>It becomes obvious that the only option is to push through, to pick yourself up, shake yourself, because what you need to do: to show everybody what you are capable of, to do everything to succeed.</p>
+<p>With this stroke of energy you quickly gather your things, leave the house, grab a breakfast and coffee on your way to the library and find yourself back in the exactly same spot as in the past few months, <a href="runtothelibrary2.html">doing the same thing</a>.</p>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

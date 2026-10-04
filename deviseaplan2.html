@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>CONTINUE DEVISING A PLAN FOR TOMORROW</h1> 
+
+<p>As you try to calm yourself down by saying that tomorrow you will appreciate the preparatory work you've done today, you persist in devising a plan for tomorrow.</p>
+<p>You end up spending an hour or so more by struggling to think of the most productive way how to spend your time tomorrow.</p>
+<p>As the thoughts about all three projects are running through your head, you realize that each project is basically in the same stage: all of them simply need more of your time, more of your attention.</p>
+<p>The only way forward is for you to read through them, to think how to make your own take more pronounced and that without actually working on the projects none of them could get any better.</p>
+<p>The thoughts of the pressure of time and of your own expectations and stakes are constantly present in your mind as you try to think of something that would be a turning point for any of the projects.</p>
+<p>After an hour more you realize that <a href="#" onclick="showMore(); return false;">you won't reach any breakthrough tonight.</a></p>
+<div id="moreText"></div>
+
+<script>
+     function showMore() {
+          document.getElementById("moreText").innerHTML=
+               "<p>This makes you feel frustrated with yourself because you knew that you were tired and that persisting in trying to think of some new idea that would lead to a revelation was impossible without taking a step back from all of this;</p>" +
+               "<p>without allowing yourself to forget about the pressure of time and without allowing yourself to take a needed rest by doing something for yourself, by doing something that would bring you joy.</p>" +
+               "<p>You feel frustrated with yourself that you didn't listen to your inner voice which has been screaming for a break, that you time and time again chose to ignore that voice and <a href='#' onclick='showSecond(); return false;'>kept pushing through.</a></p>";
+     }
+
+     function showSecond() {
+          document.getElementById("moreText").innerHTML+=
+               "<p>You realize that you haven't had a moment of pure happiness in a while and that you've come to the point when what should bring you that happiness and joy—your studies, your own work—is having an opposite effect:</p>" +
+               "<p>you are not sure anymore for whom you are doing this, for whom you are writing all these papers and doing these projects.</p>" +
+               "<p>The answer you've been telling yourself is that, of course, it is for you, for your future, <a href='#' onclick='showThird(); return false;'>but is it?</a></p>";
+     }    
+
+     function showThird() {
+          document.getElementById("moreText").innerHTML+=
+               "<p>You are not enjoying the process anymore, you have no interest in working and finishing the projects anymore, all you can think of is how to finally be done with this.</p>" +
+               "<p>Actually it is not even that, you don't care anymore, you couldn't care less whether you submit your projects or not, because all the excitement with which you came to New York to study is by now nowhere to be found.</p>" +
+               "<p>It is not even that you feel like you've disappointed yourself, you simply don't care anymore, you've no interest whatsoever in anything you're working on.</p>" +
+               "<p>If it is not making you happy, if you're not enjoying learning new things, producing interesting work, then why and for whom are you actually doing all this?</p>" +
+               "<p>You are completely and utterly disencouraged to do any more work; now or tomorrow or the day after tomorrow.</p>" +
+               "<p>You decide to <a href='gotobedafterplan.html'>go to bed</a>.</p>";
+     }
+
+</script>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

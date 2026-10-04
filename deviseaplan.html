@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>DEVISA A PLAN FOR TOMORROW</h1> 
+
+<img src="images/plan.jpg"> 
+
+<p>You start with thinking which of the three projects you've been working on in the last few months is in its earliest stage, thus requires the most attention and work.</p>
+<p>You think of the next steps that you need to take with that project: either to search for some academic research already done and published on that topic or film or piece of media that your own research is engaged with, or if a sufficient amount of research is already gathered, which section of the paper is lacking the most content, that is, the meat of your own argument.</p>
+<p>While it seems like a pretty straight-forward approach and shouldn't take too much of your time, you catch yourself not being able to focus, because you've had a long day working on those projects and your head is going in circles trying to grapple with the amount of work you still need to do and the ostensible lack of time to accomplish what you've set out to do with all three of the projects.</p>
+<p>The anxiety from the internal pressures is growing and what appeared to you beforehand like an anxiety-releaving plan has turned out to be an anxiety-enducing use of your time.</p>
+<p>So as you're struggling to write the plan for tomorrow, you are thinking of how to proceed after having had this inner dilemma resurface again:</p>
+
+<!-- optional: add a list.  the <ul> tag goes around the whole list.  the <li> tag goes around each item on the list. You can nest a link tag  inside of the <li> tags as shown below on the first list item.  If you don't want a list on your page, delete this code (but save it somewhere else if you want lists on any of your pages)  You can have as many or few list items as you like.-->
+
+<ul>
+     <li>You think that going to bed right now and having as much sleep as possible tonight would help you the most, would be the most efficient and productive way how to spend your time tonight in order to be ready for tomorrow, so you leave everything as it is and <a href="gotobedbeforeplan.html">go to bed</a>.</li>
+     <li>You think that tomorrow you will feel better about yourself if you just <a href="deviseaplan2.html">push through</a> this surge of anxiety, finish writing the to-do list for tomorrow, because you need to be prepared, this is the time to show what you're capable of, and being on top of things is the answer on how to succeed.</li>
+</ul>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>ON THE COUCH AGAIN</h1> 
+
+<img src="images/couch.jpg">
+
+<p>As you're sitting on the couch, having no more energy left in your body, you are AGAIN confronted with a choice:</p>
+
+<ul>
+     <li><a href="gotobed.html">Go to bed:</a> simply go to bed without thinking whatsoever about tonight and the next day; you won't set an alarm and you will think about the day and what you need to do when you wake up; you are too tired to do anything and all you want to do is (as much as it is possible) to forget about the pressure of time.</li>
+     <li><a href="watchamovie.html">Watch a movie:</a> something that wasn't an assigned watch for any of your classes, one that is purely for fun, one that would (as much as it is possible) help you to forget about the pressure of time.</li>
+     <li><a href="gooutwithyourfriend.html">Go out with your friend:</a> you think that a couple of drinks, a few laughs, a game or two of pool and conversations about anything but your final projects would help you to (as much as it is possible) forget about the pressure of time.</li>
+     <li><a href="deviseaplan.html">Devise a constructive plan for the next day:</a> you think that in order to be as efficient as possible, a to-do list would help you put yourself in a productive mood and the concise plan would harness that momentum into the next day, everything would have to done according to the plan that way you would not lose any time the next day and thus you would (as much as it is possible) forget the pressure of time.</li>
+</ul>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

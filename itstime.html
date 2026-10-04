@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>IT'S TIME</h1> 
+
+<img src="images/deadline.jpg">  
+
+<p>It's the beginning of December, and there are exactly 2 weeks until the submission deadlines of the final projects for all 3 of your classes.</p>
+<p>In order to succeed you desperately need to use your time as valuably as possible, to extract the most value of your time.</p>
+<p>Because the stakes for you to perform exceptionally well on all three final projects are extremely high, you had started thinking about and working on the final projects from the very first day of classes.</p>
+<p>With each day the pressure had only augmented and now you've reached the culmination of it: all you can think about is how to put your time to best use to submit the best possible versions of all your projects.</p>
+<p>That said, <a href="#" onclick="showMore(); return false;">something else has also reached its culmination:</a></p>
+<div id="moreText"></div>
+
+<script>
+     function showMore() {
+          document.getElementById("moreText").innerHTML=
+               "<p>the space in your head to hold and endure this pressure, the strength to deal with this pressure while also trying to enjoy New York and actually live your life. You feel that your life has been subsumed by this pressure to succeed. In other words, you desperately need a break, time for yourself, time to rest. Yet you are also aware that it is the worst possible timing to take a break; there is no time for a break, there is no time to allocate for yourself, all the time must be spent working, working, working and succeeding. It is (you think) outrageous to even consider taking some time off from working, because this is the time when you have to show what you are capable of.</p>" +
+               "<p>So, <a href='thechoice.html'>all this is going through your head when you come home from a long day of working.</a></p>";
+     }
+
+</script>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

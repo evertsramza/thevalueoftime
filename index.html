@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>THE VALUE OF TIME</h1>
+
+<img src="images/option2.jpg">  
+
+<p>Is there a more subjective question than what is the value of time?</p>
+
+<p>The answer always depends on the person's desired outcome of...life. On one's dreams and goals.</p>
+
+<p>Your goals probably differ from mine, and most likely also from anybody else's. 
+
+<p>But one thing is clear: we all have our goals to which we are aspiring and striving for. We are all running towards something. And there is but one thing we all have to face: time.</p> 
+    
+<p>So there is no question more essential than: are you being as efficient as possible with the use of your time? (or are you wasting your time?)
+    
+<p>The method for the answer is right in front of you: every decision should be made in accordance to your goals and anything that would distract or come in the way between you and your goals should be rejected.</p>
+
+<p>Simple enough.</p>
+
+<p>Then, this quick and painless exercise of choosing how to use one's time should be a piece of cake.</p>
+
+<!--You can include a link in a paragraph, as shown below-->
+<p><a href="letsimagineahypotheticalscenario.html">Would you care to give it a go?</a></p>
+
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    // Start the timer only if it hasn't started in this tab
+    if (!sessionStorage.getItem("startTime")) {
+        sessionStorage.setItem("startTime", Date.now());
+    }
+
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

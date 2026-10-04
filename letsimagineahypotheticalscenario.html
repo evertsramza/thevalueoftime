@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>LET'S IMAGINE A HYPOTHETICAL SCENARIO</h1> 
+
+<img src="images/nyc.jpg">
+
+<p>You're an international student in your mid-20s who has recently moved to New York.</p>
+<p>The reason you moved to New York was your studies: you got accepted in a master's program at a university which was your preferred destination.</p>
+<p>You are in love with New York. You are completely sure that New York is the city made for you, which means that you would like to, like really really want to, or actually you need to, stay in New York after graduation. This is the city where your dreams can come true, New York is the only city where you can fulfill your full potential in life.</p>
+<p><a href="#" onclick="showMore(); return false;">You've made up your mind.</a></p>
+<div id="moreText"></div>
+
+<script>
+     function showMore() {
+          document.getElementById("moreText").innerHTML=
+               "<p>However, there is one component of the whole affair of being an international student in the United States that is complicating your plan of staying in New York.</p>" +
+               "<p>The crux of your constant pondering about how valuable you are with the use of your time: you cannot stay in the country if you are not either studying or working (in your field, so working at Starbucks won't do).</p>" +
+               "<p>It is not that you didn't know this beforehand; you knew what you were getting yourself into, but now actually being in New York the stakes feel higher and the pressure more present.</p>" +
+               "<p><a href='#' onclick='showSecond(); return false;'>You had to start thinking about how to stay in New York right from the very first day.</a></p>";
+     }
+
+     function showSecond() {
+          document.getElementById("moreText").innerHTML+=
+               "<p>Therefore, in the 2 years you're definitely going to be spending in New York to finish your master's program you have to decide between applying to a PhD program or finding a job.</p>" +
+               "<p>Sounds easy enough.</p>" +
+               "<p>Nevertheless, both scenarios are imbued with quite heavy implications on what you need to do in order to succeed in either of the <a href='#' onclick='showThird(); return false;'>2 paths:</a></p>";
+     }    
+
+     function showThird() {
+          document.getElementById("moreText").innerHTML+=
+               "<p>1. For the PhD option it means that your grades have to be excellent, top of the class, your engagement with the professors have to stand out that the professors would be willing to not only write the letters of recommendation just because you asked them kindly, but because they would want to sincerely recommend you as a prospective PhD candidate,  and your final projects have to represent an exceptionally intellectual mind that would attract attention which would translate into you publishing or exhibiting or in some other way putting your work out there that would convey your readiness for a PhD program.</p>" +
+               "<p>2. For the job option it means that besides the first option you would also need to build a network of connections, to put yourself out there, to actively look for opportunities in the job market. The chances of you being hired, of course, hinges upon the quality of your output in the master's program, whether or not your work stands out from the rest, whether you would be a better fit than any other candidate (and don't forget about how the hiring of the internationals has been made extremely unappealing in contrast to the hiring of US citizens).</p>" +
+               "<p>So, in order to be able to stay in New York after graduation you have to be excellent at what you do, and you have to be excellent at it for 2 years straight starting right now. <a href='itstime.html'>It's time to show what you're capable of.</a></p>";
+     }
+
+</script>
+
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>ANOTHER DAY AT THE LIBRARY</h1> 
+
+<img src="images/library.jpg">  
+
+<p>You take all the stuff from where you left it yesterday and run to the library.</p>
+<p>You spend exactly the same day as you had yesterday, working on your projects without breaks, the pressure of time pushing you forwards, desperately repressing the need to take a break; you are struggling to advance your projects, you are rereading the same paragraphs over and over again, frustrated with yourself that you are not getting any further, that the projects are not good enough, even having thoughts of why are you here, you are not worthy of being in New York, you are taking someone else's spot in the program who would have a better grasp on their lives. But instead of taking a break, you decide to push through.</p>
+<p>Consequently you come home after a long day of working and but in fact a large chunk of your day — frankly almost the whole day — has been spent ruminating on whether your choices on how to spend your time are efficient enough, productive enough and whether or not you are succeeding in extracting as as much value as possible from your time.</p>
+<p>Today, you clearly could have done better! <a href="thechoice3.html">You're disappointed in yourself</a>.</p>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

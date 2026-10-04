@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>GO OUT WITH YOUR FRIEND</h1>
+
+<p>Your friend replies soon after saying that she would love to hang out and could meet you at the bar in 15 minutes, and that she will bring her roommate with whom you're also good friends.</p>
+<p>Receiving the message overwhelms you and the thought of the probable state you will be in tomorrow revives the question if you should actually go, but now with even higher imaginative intensity.</p>
+<p>So as you're still sitting on your couch, you are thinking of how to proceed after having had this inner dilemma resurface again:</p>
+
+<img src="images/stressrelax.jpg" class="small-image"> 
+
+<ul>
+     <li><a href="gooutwithyourfriend3.html">Commit to the plan</a> and and respond to your friend that you will meet them there in 15 minutes, because youknow that spending time with your friends will help take your mind off your anxieties that you've taken on by yourself, that talking with your friends will relieve the pressure and that simply being with your friends will bring you joy.</li>
+     <li><a href="gohome.html">Write your friend another message</a> apologizing for changing your mind because: what were you thinking? Going out when you are already struggling to manage your anxieties and the various pressures, when you should be prioritizing your work over everything else, when you should be thinking how to put yourself in a position where you would spend your time as efficiently as possible to succeed. Could anything be more irresponsible than going out drinking at this moment?</li>
+</ul>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>CONTINUE SPENDING TIME WITH YOUR FRIEND</h1>
+
+<p>You all have another drink, play another round of pool, have another drink and just have fun.</p>
+<p>Time flies by but you don't care because you finally feel as yourself; you're proud of yourself for taking the night off.</p>
+<p>After a couple of hours you all decide to go home, after all it's a week-night and all of you have some type of work to be done tomorrow (or rather today already).</p>
+<p>You say goodbye to your friends, thank them for this night, that they listened to you and helped in the way they knew how, you tell them that this was exactly what you needed.</p>
+<p>Although you genuinely had fun and everything you said to your friends when parting ways truly came from the bottom of your heart, as you're walking home, in a slightly tipsy mood, you cannot resist the thought of “what if you've stayed home,” how if you had done so you would be sound asleep right now.</p>
+<p>How if had stayed home you would wake up tomorrow (today) feeling afresh and ready to conquer the last steps of your semester.</p>
+<p>You fight back, but the thought proves to be too pervasive, too inescapable and eventually too powerful.</p>
+<p>Your mood swiftly changes: you become angry at yourself for getting drunk, for getting home so late (it's well past midnight), for not thinking how you would feel tomorrow (hungover), for not choosing the mature, rational and-let's be honest-the only right choice on how to spend your night.</p>
+<p>When you come home your house, you head straight to the bedroom, thinking that now you can't lose any more of the valuable seconds so you simply fall into your bed and <a href="gotobedafterbar.html">fall asleep being deeply mad at yourself</a>.</p>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

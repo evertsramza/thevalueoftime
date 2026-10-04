@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>GO TO BED</h1> 
+
+<p>The next morning you wake up, having had a sort of okay sleep, but you are still tired; you realize that all the accumulated anxieties and sleep deprivation could not be solved in one night and immediately think of the loss of time of yesterday's evening.</p>
+<p>You should have known that one night of only fine and not even great sleep would not change a thing.</p>
+<p>Instead of actually spending time doing something you would enjoy (watching a movie or sticking with the idea of going out with your friends) or devising a plan for today, you have done neither of those things.</p>
+<p>You feel frustrated and your choice to go to bed yesterday has instead of relieving the pressure of time only intensified the pressure.</p>
+<p>In the midst of all this frustration you see 2 ways of how to go on with your day:</p>
+
+<ul>
+     <li>Because you feel so tired and irritated, you perceive yesterday's choice as a sign that you need to <a href="takeadayoff.html">take a day off</a> and spend the day not doing anything that is related to your projects, have the day totally for yourself.</li>
+     <li>Because you feel so irritated and frustrated of yourself that you did not think of today yesterday, all you could see yourself doing is to forget it and <a href="runtothelibrary.html">go the library as soon as possible</a> to not lose any more of your time that you should have been your priority yesterday.</li>
+</ul>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

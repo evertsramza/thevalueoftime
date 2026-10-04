@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>CONTINUE HAVING A DAY OFF</h1> 
+
+<p>You feel a little better after the having eaten dinner.</p>
+<p>After washing the dishes, you go to the living room, turn on the tv and browse all of the streaming platforms for something fun to watch, something that you will finally enjoy without any (academic) strings attached.</p>
+<p>You choose Jurassic Park, take some snacks, get comfy on the couch and you're ready for some dinosaur action.</p>
+<p>Suddenly you realize that you have been staring at your tv, not paying any attention to the film and only thinking of how anxious and desperate you are;</p>
+<p>how you are throwing a towel on this journey to New York and that the last 5 months would have been for nothing;</p>
+<p>the things your friends and family will think and say because you didn't have the guts to push through it, to put your feelings aside for a moment and finish what you came here to do.</p>
+<p>As you've not been paying any attention to the film, you are thinking of how to proceed after having had this inner dilemma resurface again:</p>
+
+<img src="images/stressrelax.jpg" class="small-image"> 
+
+<ul>
+     <li><a href="continuehavingadayoff6.html">Continue to repress the anxiety of the waste of time and at least try to have the day for yourself</a> and to tell yourself that life is not all about the work especially at the expense of your sanity, that who cares what your friends will think because you need a break to not lose your mind and have a massive burnout, the real friends will understand; and as your family is concerned, they will understand, they have always understood.</li>
+     <li>Turn off the tv, take all the stuff you need for working on your projects and <a href="itstoolate.html">run to the library</a> because you don't want to be left at home with these thoughts, you need to work, you can't let your friends, your family and most importantly you can't let yourself down: you have to work, you have to be the best, you have to prove yourself and you have to succeed.</li>
+</ul>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

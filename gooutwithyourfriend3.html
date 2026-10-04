@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>CONTINUE SPENDING TIME WITH YOUR FRIEND</h1>
+
+<img src="images/bar.jpg">  
+
+<p>You get ready and go out to the bar.</p>
+<p>As you're approaching the bar you see that your friends are in a great mood and are excited to see you again.</p>
+<p>That makes you have contradictory feelings: seeing them makes you happy and you realize how much you missed your friends, that it has been too long since the last time you hung out and how important these friendships are to you;</p>
+<p>however, since you haven't told them how you feel about your anxieties, the pressure seems to become even more burdensome and exert more power over you.</p>
+<p>You overcome the fear and decide to open up to your friend about your anxieties, pressure of time and all the rest.</p>
+<p>Both of your friends are understanding and supportive, just as you thought (actually knew) they would be.</p>
+<p>The conversation makes you acknowledge the power of friendship: the power of talking about your problems and the power of listening to your friends' experiences with the same or similar feelings and how they've dealt with them in the past or perhaps are currently dealing with them.</p>
+<p>You realize how good this makes you feel, and that actually while talking with your friend you haven't felt the pressure of time even though everything you've been talking about is that very pressure of time.</p>
+<p>You feel relieved to finally have it off your chest, even if just for a brief moment.</p>
+<p>You think: where have I been this whole time, what have I been doing, why haven't I thought of talking to my friends before and how could I forget how much I enjoy their company?</p>
+<p>You're enjoying the time with your friends and you decide to stay a little longer, play another game of pool and now that you've talked with your friends about your anxieties, you are free: you can have a little fun, talk about something else, talk with your friends and listen how they're doing: be a good friend.</p>
+<p>You acknowledge how much you've missed this, how blind you've been to your own feelings and, in fact, your mental health, you know that you need this time off to be able to return to your studies tomorrow with a fresh view on things simply because you took one night off and finally-for once-thought of something else, thought of yourself other than work.</p>
+<p>You have another drink, you laugh (you actually can't remember when was the last time you genuinely laughed), you realize how much you've missed your friends and how much you love them.</p>
+<p>But then, suddenly, out of nowhere, you remember of all the work that you still need to do until the submission deadline. The anxiety overtakes you again and you're plunged right back into the reality.</p>
+<p>So as you're finishing your second drink, you are thinking of how to proceed after having had this inner dilemma resurface again:</p>
+
+<img src="images/stressrelax.jpg" class="small-image"> 
+
+<ul>
+     <li><a href="gooutwithyourfriend4.html">Keep hanging out with your friends</a> because, as you've just seen it with your own eyes, spending time with your friends will help take your mind off your anxieties that you've taken on by yourself, that talking with your friends will relieve the pressure and that simply being with your friends will bring you joy.</li>
+     <li>Tell your friends that it has been a blast, that you appreciate them listening to your problems and giving you some words of wisdom on how to best deal with your anxieties, but that it has already been a long night so you <a href="gohome2.html">have to go home now</a> because: what were you thinking? Going out when you are already struggling to manage your anxieties and the various pressures, when you should be prioritizing your work over everything else, when you should be thinking how to put yourself in a position where you would spend your time as efficiently as possible to succeed. Could anything be more irresponsible than going out drinking at this moment?</li>
+</ul>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>WHAT WERE YOU THINKING?</h1>
+
+<p>Once home, you try to make a provisional plan for tomorrow, but because now you feel even more tired than when you initially got home and also frustrated that you even considered going out in the first place, so you're not capable of thinking straight and instead of writing a fully fleshed-out plan for the next day, you make a short list of bullet points of what you need to do tomorrow, but even looking at the list is making you more and more irritated about the loss of time.</p>
+<p>You end up <a href="gotobedafterbar.html">going to bed</a> being mad at yourself.</p>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

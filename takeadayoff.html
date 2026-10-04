@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<title>THE VALUE OF TIME</title>
+
+ <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+</head>
+
+<body>
+<div>
+<h1>TAKE A DAY OFF</h1> 
+
+<p>As soon as you close your eyes, you can't think of nothing else but the time you are wasting just this second. You try to think of something else but it is impossible.</p>
+<p>You think that instead of staying in bed actually doing something-still unrelated to your projects-would take your mind off the pressure of time.</p>
+<p>You go brush your teeth and take a shower.</p>
+<p>Suddenly you realize that you have been standing in the shower for the last 20 minutes and only thinking of how anxious and desperate you are;</p>
+<p>how you are throwing a towel on this journey to New York and that the last 5 months would have been for nothing;</p>
+<p>the things your friends and family will think and say because you didn't have the guts to push through it, to put your feelings aside for a moment and finish what you came here to do.</p>
+<p>As the warm shower is starting to feel more and more lukewarm and not so enjoyable anymore, you are thinking of how to proceed after having had this inner dilemma resurface again:</p>
+
+<img src="images/stressrelax.jpg" class="small-image"> 
+
+<ul>
+     <li><a href="continuehavingadayoff.html">Continue to repress the anxiety of the waste of time and at least try to have the day for yourself</a> and to tell yourself that life is not all about the work especially at the expense of your sanity, that who cares what your friends will think because you need a break to not lose your mind and have a massive burnout, the real friends will understand; and as your family is concerned, they will understand, they have always understood.</li>
+     <li>Step out of shower, have a quick bite of something and <a href="runtothelibrary.html">run to the library</a></li>
+</ul>
+
+<div id="timer">Time elapsed: 00:00:00</div>
+
+<script>
+    function updateTimer() {
+        const startTime = Number(sessionStorage.getItem("startTime"));
+
+        if (!startTime) {
+            document.getElementById("timer").textContent =
+                "00:00:00";
+            return;
+        }
+
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+        const hours = Math.floor(elapsed / 3600);
+        const minutes = Math.floor((elapsed % 3600) / 60);
+        const seconds = elapsed % 60;
+
+        const format = n => String(n).padStart(2, "0");
+
+        document.getElementById("timer").textContent =
+            format(hours) + ":" +
+            format(minutes) + ":" +
+            format(seconds);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</body>
+</html>

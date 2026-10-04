@@ -1,0 +1,86 @@
+/*You can change the hexidecimal number to change the colors on your nonlinear story.  
+You can also change the font family, font sizes, font styles, or alignments*/
+
+/*overall style*/
+div {
+    width: 75%;
+	margin: 0 auto;
+}
+
+body {
+	background: #bababa; /*to change, look up color codes on Adobe Color, Cooler, or Photoshop*/
+	font-family: Tahoma, Geneva, sans-serif; /*to change, look up other font families*/
+}
+/*heading style*/
+h1 {
+	font-family: "Arial Black", Gadget, sans-serif;
+	color: #080808; 
+	text-align: center; 
+	font-size: 32px; /*you can change all font sizes by changing the pixels*/
+	font-weight: bold;
+}
+/*image style*/
+img {
+	height:350px; /*change height of image*/
+    display: block;
+    margin: auto;
+    border:4px solid #000000; 
+}
+
+.small-image {
+	height:250px; /*change height of image*/
+	display: block;
+	margin: auto;
+	border:5px solid #000000; 
+}
+
+/*paragraph style*/
+p {	
+	font-size: 20px;
+	text-align: center; /*may change this to left, right or center*/
+	color: #000000; /*change this to the hexidecimal number for the paragraph text color you prefer*/
+}
+/*unvisited link style*/
+a {
+	color: #fefefe;
+    text-align: center;
+}
+/*hovered over link style*/
+a:hover {
+	color: #000000; 
+}
+/*visited link style*/
+a:visited {
+	color: #505050; 
+}
+/*list styles*/
+ul {
+   display: block;
+    margin:auto; 
+    text-align: left;
+	padding-left: 7%;
+  	list-style-position: inside;
+}
+
+li {
+	font-size: 20px;
+	font-style:italic; 
+	color: #000000;
+	}
+
+
+#timer {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+	width: auto;
+	margin: 0;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 20px;
+	font-weight: bold;
+    color: #ff0000;
+    padding: 8px;
+    z-index: 1000;
+}
+
+	
